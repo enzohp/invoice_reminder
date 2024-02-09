@@ -1,6 +1,6 @@
 {
     'name': 'Invoice Reminder',
-    'version': '17.0.0.0',
+    'version': '16.0.0.0',
     'summary': 'Automatic reminder for unpaid invoices 7 days after due date has passed',
     'depends': ['account'],
     'data': [
