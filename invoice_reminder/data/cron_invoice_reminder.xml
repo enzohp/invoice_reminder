@@ -8,9 +8,9 @@
             <field name="code">
               <![CDATA[
 #Calculates 7 days ago and sets it as a date
-seven_days_ago = (fields.Datetime.now() - timedelta(days=7)).date()
+seven_days_ago = (datetime.datetime.now() - datetime.timedelta(days=7)).date()
 # Filter for Invoices (not bills) that have a due date past and are partially paid or not paid
-pending_invoices = env["account.move"].search(["&", "&", ("move_type", "=", "out_invoice"), ("payment_state", "in", ["partial", "not_paid"]), ("invoice_date_due", "<", Today)])
+pending_invoices = env["account.move"].search(["&", "&", ("move_type", "=", "out_invoice"), ("payment_state", "in", ["partial", "not_paid"]), ("invoice_date_due", "<", seven_days_ago)])
 
 # Search for the email template by its external ID
 template = env.ref('invoice_reminder.invoice_reminder_email_template', raise_if_not_found=False)
