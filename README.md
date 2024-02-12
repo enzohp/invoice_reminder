@@ -34,20 +34,20 @@ This project contains two main files:
 Computes the date seven days before the current date using the datetime module.
 
 - **Filter Invoices:**
-
-pending_invoices = env["account.move"].search([
-  "&", "&", 
-  ("move_type", "=", "out_invoice"), 
-  ("payment_state", "in", ["partial", "not_paid"]), 
-  ("invoice_date_due", "<", seven_days_ago)])
+  ```python
+  pending_invoices = env["account.move"].search([
+    "&", "&", 
+    ("move_type", "=", "out_invoice"), 
+    ("payment_state", "in", ["partial", "not_paid"]), 
+    ("invoice_date_due", "<", seven_days_ago)])
 Retrieves invoices that are customer invoices, either partially paid or not paid, and due earlier than seven days ago.
 
 - **Email Template Lookup and Sending Emails:**
-
-template = env.ref('invoice_reminder.invoice_reminder_email_template', raise_if_not_found=False)
-if template:
-    for pending_invoice in pending_invoices:
-        template.send_mail(pending_invoice.id, force_send=False, raise_exception=False)
+  ```python
+  template = env.ref('invoice_reminder.invoice_reminder_email_template', raise_if_not_found=False)
+  if template:
+      for pending_invoice in pending_invoices:
+          template.send_mail(pending_invoice.id, force_send=False, raise_exception=False)
 Looks up an email template and sends emails to each filtered invoice using the template.
 
 ### 2. invoice_reminder_email_template.xml
