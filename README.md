@@ -69,9 +69,9 @@ Looks up an email template and sends emails to each filtered invoice using the t
     - `auto_delete`: Set to `False`, emails are not deleted after sending.
 
 
-##Installation: Ensure these XML files are correctly placed in your Odoo addons directory and that the invoice_reminder module is properly installed.
+**Installation:** Ensure these XML files are correctly placed in your Odoo addons directory and that the invoice_reminder module is properly installed.
 
-##Customization: Feel free to duplicate and adjust the Python code and email template to fit your business logic and branding, as per the instructions in each file's overview.
+**Customization:** Feel free to duplicate and adjust the Python code and email template to fit your business logic and branding, as per the instructions in each file's overview.
 
 
 
