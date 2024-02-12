@@ -1,7 +1,7 @@
 # Invoice Reminder
 Automatic reminder for unpaid invoices 7 days after the due date has passed. Note that crons in Odoo are called Scheduled Actions.
 
-**Author:** Enzo Hp
+**Author:** Apexive
 
 ## Overview
 This project contains two main files:
